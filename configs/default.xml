@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-	<feature name="Ejercicio2FabricaAutomoviles"/>
-	<feature name="Base"/>
+	<feature automatic="selected" name="Automovil"/>
+	<feature automatic="selected" name="modelo"/>
+	<feature automatic="unselected" name="compacto"/>
+	<feature manual="selected" name="sedan"/>
+	<feature automatic="unselected" name="SUV"/>
+	<feature automatic="selected" name="motor"/>
+	<feature automatic="selected" name="tipo"/>
+	<feature automatic="unselected" name="diesel"/>
+	<feature automatic="selected" manual="selected" name="gasolina"/>
+	<feature name="turbo-alimentador"/>
+	<feature automatic="selected" name="puertas"/>
+	<feature automatic="unselected" name="3"/>
+	<feature automatic="selected" name="4"/>
+	<feature automatic="unselected" name="5"/>
+	<feature automatic="selected" name="transmision"/>
+	<feature manual="selected" name="manual"/>
+	<feature automatic="selected" name="5 velocidades"/>
+	<feature automatic="unselected" name="automatica"/>
+	<feature automatic="unselected" name="6 velocidades"/>
+	<feature automatic="selected" name="seguridad"/>
+	<feature automatic="selected" name="ABS"/>
+	<feature automatic="selected" name="6 airbags"/>
+	<feature automatic="selected" name="control de tracción"/>
+	<feature automatic="unselected" name="4X4"/>
+	<feature automatic="selected" name="entretenimiento"/>
+	<feature automatic="selected" name="radio"/>
+	<feature automatic="selected" name="CD"/>
+	<feature automatic="selected" name="MP3"/>
+	<feature automatic="selected" name="pantalla tactil color"/>
+	<feature manual="selected" name="navegación"/>
+	<feature name="accesorios"/>
+	<feature name="techo corredizo"/>
+	<feature name="rines de lujo"/>
+	<feature name="cojinería en cuero"/>
 </configuration>

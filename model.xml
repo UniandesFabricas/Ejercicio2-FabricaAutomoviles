@@ -1,8 +1,128 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
 	<struct>
-		<and abstract="true" mandatory="true" name="Ejercicio2FabricaAutomoviles">
-			<feature name="Base"/>
+		<and abstract="true" mandatory="true" name="Automovil">
+			<alt mandatory="true" name="modelo">
+				<graphics key="collapsed" value="false"/>
+				<feature name="compacto"/>
+				<feature name="sedan"/>
+				<feature name="SUV"/>
+			</alt>
+			<and mandatory="true" name="motor">
+				<alt mandatory="true" name="tipo">
+					<graphics key="collapsed" value="false"/>
+					<feature name="diesel"/>
+					<feature name="gasolina"/>
+				</alt>
+				<feature name="turbo-alimentador"/>
+			</and>
+			<alt mandatory="true" name="puertas">
+				<feature name="3"/>
+				<feature name="4"/>
+				<feature name="5"/>
+			</alt>
+			<alt mandatory="true" name="transmision">
+				<and name="manual">
+					<feature mandatory="true" name="5 velocidades"/>
+				</and>
+				<and name="automatica">
+					<feature mandatory="true" name="6 velocidades"/>
+				</and>
+			</alt>
+			<and mandatory="true" name="seguridad">
+				<feature mandatory="true" name="ABS"/>
+				<feature mandatory="true" name="6 airbags"/>
+				<feature name="control de tracción"/>
+				<feature name="4X4"/>
+			</and>
+			<and mandatory="true" name="entretenimiento">
+				<feature mandatory="true" name="radio"/>
+				<feature mandatory="true" name="CD"/>
+				<feature mandatory="true" name="MP3"/>
+				<feature name="pantalla tactil color"/>
+			</and>
+			<feature name="navegación"/>
+			<or name="accesorios">
+				<feature name="techo corredizo"/>
+				<feature name="rines de lujo"/>
+				<feature name="cojinería en cuero"/>
+			</or>
 		</and>
 	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>diesel</var>
+				<var>SUV</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>compacto</var>
+				<var>3</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>sedan</var>
+				<var>4</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>SUV</var>
+				<var>5</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>turbo-alimentador</var>
+				<disj>
+					<var>sedan</var>
+					<var>compacto</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>sedan</var>
+					<var>SUV</var>
+				</disj>
+				<var>control de tracción</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>4X4</var>
+				<var>SUV</var>
+			</imp>
+		</rule>
+		<rule>
+			<not>
+				<conj>
+					<var>compacto</var>
+					<disj>
+						<var>control de tracción</var>
+						<var>4X4</var>
+					</disj>
+				</conj>
+			</not>
+		</rule>
+		<rule>
+			<imp>
+				<var>navegación</var>
+				<var>pantalla tactil color</var>
+			</imp>
+		</rule>
+	</constraints>
 </featureModel>

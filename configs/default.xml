@@ -8,7 +8,7 @@
 	<feature automatic="selected" name="motor"/>
 	<feature automatic="selected" name="tipo"/>
 	<feature automatic="unselected" name="diesel"/>
-	<feature automatic="selected" manual="selected" name="gasolina"/>
+	<feature automatic="selected" name="gasolina"/>
 	<feature name="turbo-alimentador"/>
 	<feature automatic="selected" name="puertas"/>
 	<feature automatic="unselected" name="3"/>
